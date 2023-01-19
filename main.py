@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+temp = None
+hum = None
+
 # crea una funzione che prenda le richieste di tipo post e ne salvi i dati
 @app.route('/', methods=['POST'])
 def my_form_post():
