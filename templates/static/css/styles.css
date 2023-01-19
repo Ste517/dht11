@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+:root {
+
+    --1: #111111ff;
+    --2: #161723ff;
+    --3: #0d0c34ff;
+    --4: #0f0c75ff;
+    --5: #16144fff;
+    --6: #29275aff;
+    --7: #4e4d6fff;
+    --8: #747384ff;
+    --9: #999999ff;
+    --10: #ffffffff;
+    --theme: "dark";
+
+}
+
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--2);
+  color: var(--10);
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: var(--1);
+}
+  
+.topnav a {
+    float: left;
+    display: block;
+    color: var(--10);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+.topnav a:hover {
+    background-color: var(--2);
+    color: var(--10);
+}
+  
+.topnav a.active {
+    background-color: var(--4);
+    color: var(--10);
+}
+  
+.topnav .login-container {
+    float: right;
+}
+  
+.topnav input[type=number] {
+  
+    color: var(--10);
+    background-color: var(--6);
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width:120px;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+.topnav input[type=text] {
+    
+    color: var(--10);
+    background-color: var(--6);
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    width:120px;
+    font-family: 'Montserrat', sans-serif;
+  
+}
+  
+.topnav .login-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background-color: var(--3);
+    color: var(--10);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+.topnav .login-container button:hover {
+    background-color: var(--4);
+}
+  
+@media screen and (max-width: 600px) {
+    .topnav .login-container {
+        float: none;
+    }
+    .topnav a, .topnav input[type=text], .topnav input[type=number], .topnav .login-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topnav input[type=text], .topnav input[type=number] {
+        border: 1px solid var(--9);  
+    }
+
+}
+  
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0d0c34ff;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: #ccc;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.lista {
+    text-decoration: underline;
+    color: var(--10);
+}
+
+p a {
+    color: var(--10);
+}
+
+p a:visited {
+    color: var(--8);
+}
+
+a.link {
+    color: var(--10);
+}
+
+a:visited.link {
+    color: var(--8);
+}
+
+.cookieadvise {
+    background-color: var(--1);
+    padding: 16px;
+    position: fixed;
+    bottom: 0px;
+}
+
+.cookieadvise span {
+    padding: 10px 10px;
+}
+
+.cookieadvise button {
+    background-color: var(--4); 
+    border: none;
+    color: var(--10);
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.cookieadvise button:hover {
+    background-color: var(--6); 
+}
+
+table.rounded-table td{
+    padding: 5px;
+    border-color: var(--10);
+    border: 1px solid;
+    border-radius: 5px;
+    border-collapse: collapse;
+}

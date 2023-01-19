@@ -1,15 +1,17 @@
 from flask import Flask, render_template, request
 import requests
 import json
+import os
 
-# Inserisci la tua chiave API qui
-api_key = 'YOUR_API_KEY'
+with open("tokens.json", "r") as f:
+    key_file = json.load(f)
 
-# Inserisci l'ID della città per la quale vuoi ottenere i dati meteorologici
-city_id = 'YOUR_CITY_ID'
+KEY=key_file["openweather"]
+city_id=key_file["openweatherid"]
+
 
 # Crea l'URL per richiedere i dati meteorologici
-weather_url = f'http://api.openweathermap.org/data/2.5/weather?id={city_id}&appid={api_key}'
+weather_url = f'http://api.openweathermap.org/data/2.5/weather?id={city_id}&appid={KEY}'
 
 # Effettua la richiesta e ottieni i dati
 response = requests.get(weather_url)
@@ -22,7 +24,7 @@ temperature = data['main']['temp']
 humidity = data['main']['humidity']
 
 app = Flask(__name__)
-
+app._static_folder = os.path.abspath("templates/static/")
 
 temp = None
 hum = None

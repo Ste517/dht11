@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Serial Data</title>
-  </head>
-  <body>
-    <h1>Temperature: {{ temp }} °C</h1>
-    <h1>Humidity: {{ hum }} %</h1>
-  </body>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approfondimento chimica</title>
+    <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
+    <!-- Load external CSS styles -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/scripts.js"></script>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#">Home</a>
+        <label style="margin: 7px;" class="switch">
+            <input type="checkbox"></input>
+            <span id="slider" onclick="themeSwitch()" class="slider round"></span>
+        </label>
+    </div>
+    <div style="padding:16px">
+        <h1>Temperatura e umidità</h1>
+        <h2>Temperatura: {{ temp }} °C</h2>
+        <h2>Umidità: {{ hum }} %</h2>
+    </div>
+    <footer class="cookieadvise">
+        <span>Questo sito utilizza cookie funzionali, procedendo con la navigazione consenti il loro utilizzo</span>
+        <span><button onclick="closeCookies()">Ok</button></span>
+    </footer>
+    <!-- Load external JavaScript -->
+    <script src="scripts.js"></script>    
+</body>
 </html>
