@@ -9,6 +9,7 @@
     <!-- Load external CSS styles -->
     <link rel="stylesheet" href="/static/css/styles.css">
     <script src="/static/js/scripts.js"></script>
+    <meta http-equiv="refresh" content="60">
 </head>
 <body>
     <div class="topnav">
@@ -19,9 +20,13 @@
         </label>
     </div>
     <div style="padding:16px">
-        <h1>Temperatura e umidità</h1>
+        <h1>Temperatura e umidità interni</h1>
         <h2>Temperatura: {{ temp }} °C</h2>
         <h2>Umidità: {{ hum }} %</h2>
+        <h1>Temperatura e umidità esterni (previsti)</h1>
+        <h2>Temperatura: {{ predtemp }} °C</h2>
+        <h2>Umidità: {{ predhum }} %</h2>
+
     </div>
     <footer class="cookieadvise">
         <span>Questo sito utilizza cookie funzionali, procedendo con la navigazione consenti il loro utilizzo</span>
