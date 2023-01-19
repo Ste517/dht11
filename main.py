@@ -1,22 +1,19 @@
-from flask import Flask, render_template
-import serial
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+# crea una funzione che prenda le richieste di tipo post e ne salvi i dati
+@app.route('/', methods=['POST'])
+def my_form_post():
+    reqtemp = request.form['temp']
+    reqhum = request.form['hum']
+    global temp
+    global hum
+    temp, hum = reqtemp, reqhum
+    return request.form
+
 @app.route('/')
 def index():
-
-    ser = serial.Serial('COM6', 9600)
-
-    # Leggere i dati dalla seriale
-    data = ser.readline().decode().strip()
-
-    # Chiudere la connessione seriale
-    ser.close()
-
-    # Dividere i dati in valori di temperatura e umidità
-    temp, hum = data.split("\t")
-
     # Passare i valori alla pagina HTML
     return render_template('index.html', temp=temp, hum=hum)
 
